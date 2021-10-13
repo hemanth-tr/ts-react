@@ -5,7 +5,8 @@ module.exports = {
 	target: 'node',
 	entry: './server/index.ts',
 	output: {
-		path: path.resolve(__dirname, 'public')
+		path: __dirname,
+		filename: 'server.js',
 	},
 	module: {
 		rules: [
@@ -16,6 +17,6 @@ module.exports = {
 		]
 	},
 	resolve: {
-		extensions: ['.ts', '.tsx', '.js']
+		extensions: ['.ts', '.tsx', '.js', '.json']
 	}
 }
