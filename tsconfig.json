@@ -3,7 +3,8 @@
         "target": "ES3",
         "esModuleInterop": true,
         "module": "CommonJS",
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "jsx": "react-jsx"
     },
     "exclude": [
         "node_modules"
