@@ -1,23 +1,34 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const miniCssExtractPlugin = new MiniCssExtractPlugin({
+	filename: 'css/bootstrap.css'
+});
 
 const client = {
 	mode: 'development',
+	target: 'web',
 	entry: './src/index.tsx',
 	output: {
-		path: path.resolve(__dirname, 'public/js'),
-		filename: 'bundle.js',
+		path: path.resolve(__dirname, 'public'),
+		filename: 'js/bundle.js',
 		clean: true
 	},
+	plugins: [miniCssExtractPlugin],
 	module: {
 		rules: [
 			{
 				test: /\.ts?x$/,
 				use: 'ts-loader'
+			},
+			{
+				test: /\.s?css$/,
+				use: [MiniCssExtractPlugin.loader, 'css-loader']
 			}
 		]
 	},
 	resolve: {
-		extensions: ['.ts', '.tsx', '.js', '.json']
+		extensions: ['.ts', '.tsx', '.js', '.json', '.css']
 	}
 };
 
@@ -34,11 +45,15 @@ const server = {
 			{
 				test: /\.ts?x$/,
 				use: 'ts-loader'
+			},
+			{
+				test: /\.s?css$/,
+				use: 'css-loader'
 			}
 		]
 	},
 	resolve: {
-		extensions: ['.ts', '.tsx', '.js', '.json']
+		extensions: ['.ts', '.tsx', '.js', '.json', '.css']
 	}
 };
 
