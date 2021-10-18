@@ -1,12 +1,10 @@
 import React from 'react';
-import Navigation from './components/nav';
+import Navigation from './components/dashboard';
 
 export default class App extends React.Component {
     render() {
         return (
-            <Navigation>
-                Navigation
-            </Navigation>
+            <Navigation />
         )
     }
 }
