@@ -6,7 +6,7 @@ const miniCssExtractPlugin = new MiniCssExtractPlugin({
 });
 
 const client = {
-	mode: 'development',
+	mode: 'production',
 	target: 'web',
 	entry: './src/index.tsx',
 	output: {
@@ -24,6 +24,10 @@ const client = {
 			{
 				test: /\.s?css$/,
 				use: [MiniCssExtractPlugin.loader, 'css-loader']
+			},
+			{
+				test: /\.(png|svg|jpg|jpeg|gif)$/i,
+				type: 'asset/resource',
 			}
 		]
 	},
@@ -33,7 +37,7 @@ const client = {
 };
 
 const server = {
-	mode: 'development',
+	mode: 'production',
 	target: 'node',
 	entry: './server/index.tsx',
 	output: {
@@ -49,6 +53,10 @@ const server = {
 			{
 				test: /\.s?css$/,
 				use: 'css-loader'
+			},
+			{
+				test: /\.(png|svg|jpg|jpeg|gif)$/i,
+				type: 'asset/resource',
 			}
 		]
 	},
