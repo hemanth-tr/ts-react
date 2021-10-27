@@ -1,0 +1,12 @@
+.utilities {
+    display: flex;
+    flex-direction: row;
+}
+
+.utilities li {
+    list-style: none;
+}
+
+.utilities li:not(:first-child) {
+    margin-left: 15px;
+}

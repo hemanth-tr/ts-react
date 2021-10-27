@@ -1,10 +1,11 @@
 import React, { CSSProperties } from 'react';
-import { Container, Navbar } from 'react-bootstrap';
-import logo from './logo.png';
+import { Navbar } from 'react-bootstrap';
+import logo from './images/logo.png';
 
 interface IProps {
     style?: CSSProperties;
 }
+
 interface IState { }
 
 export default class Logo extends React.Component<IProps, IState> {
@@ -16,11 +17,9 @@ export default class Logo extends React.Component<IProps, IState> {
 
     render() {
         return (
-            <Container>
-                <Navbar.Brand href="#home">
-                    <img src={logo} style={this.style} />
-                </Navbar.Brand>
-            </Container>
+            <Navbar.Brand href="#home">
+                <img src={logo} style={this.style} />
+            </Navbar.Brand>
         )
     }
 }

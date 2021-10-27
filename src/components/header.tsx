@@ -1,18 +1,15 @@
 import React from 'react';
-import { Nav, Navbar, Container, NavLink } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Logo from './logo';
+import Menu from './header-components/menu';
+import UtilitiesAndLogo from './header-components/utilitiesAndLogo';
 
 export default class Header extends React.Component {
     render() {
         return (
             <Navbar bg="light" variant="light" style={{ flexDirection: 'column' }}>
-                <Logo />
-                <Container>
-                    <Nav>
-                        <NavLink>Home</NavLink>
-                    </Nav>
-                </Container>
+                <UtilitiesAndLogo />
+                <Menu />
             </Navbar>
         )
     }

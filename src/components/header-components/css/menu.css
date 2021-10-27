@@ -1,0 +1,11 @@
+.navbar-nav a:not(:first-child) {
+    margin-left: 10px;
+}
+
+.nav-link {
+    border-radius: 4px;
+}
+
+.nav-link:hover {
+    background-color: aqua;
+}
